@@ -20,21 +20,23 @@ export default function App() {
           placeholder="Type your name"
           onChange={(e) => setName(e.target.value)}
         />
-
         <input
           placeholder="Type your age "
           onChange={(e) => setAge(e.target.value)}
         />
-
         <input
           placeholder="Type your city"
           onChange={(e) => setCity(e.target.value)}
         />
-
         <input
           placeholder="Type your state "
           onChange={(e) => setState(e.target.value)}
         />
+
+        <p>{name}</p>
+        <p>{age}</p>
+        <p>{city}</p>
+        <p>{state}</p>
       </form>
       <button onClick={handleShowInfo}>Show info</button>
     </div>
