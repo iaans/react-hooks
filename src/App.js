@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
 
-function App() {
+export default function App() {
+  const [name, setName] = useState();
+
+  const [age, setAge] = useState();
+
+  const [city, setCity] = useState();
+
+  const [state, setState] = useState();
+
+  function handleShowInfo() {
+    console.log(`Name: ${name}, Age: ${age}, City: ${city}, State: ${state}`);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <form>
+        <input
+          placeholder="Type your name"
+          onChange={(e) => setName(e.target.value)}
+        />
+
+        <input
+          placeholder="Type your age "
+          onChange={(e) => setAge(e.target.value)}
+        />
+
+        <input
+          placeholder="Type your city"
+          onChange={(e) => setCity(e.target.value)}
+        />
+
+        <input
+          placeholder="Type your state "
+          onChange={(e) => setState(e.target.value)}
+        />
+      </form>
+      <button onClick={handleShowInfo}>Show info</button>
     </div>
   );
 }
-
-export default App;
